@@ -15,16 +15,17 @@ res = bm.calc_v0(22, 2)
 ```
 binomial_model(s_0, u, d, r)
 ```
-**s_0**: Stock price at time t0 (Current price of stock). <br />
-**u**: Up factor
-**d**: Down factor
-**r**: Riskless interest rate
+**s_0**: Stock price at time <img src="https://latex.codecogs.com/gif.latex? t_0" />  (Current price of stock). 
+<br />
+**u**: Up factor <br />
+**d**: Down factor <br />
+**r**: Riskless interest rate <br />
 
 ```
 binomial_model.calc_v0(k, t)
 ```
-**k**: Strike price
-**t**: Periods that you want to consider
+**k**: Strike price <br />
+**t**: Periods that you want to consider <br />
 
 # Acknowledgement
 

@@ -9,7 +9,7 @@ To use the easy-to-use binomial model, download the model.py file to your target
 from model import binomial_model
 
 bm = binomial_model(8, 2, 0.5, 0.25)
-res = bm.calc_v0(22, 2)
+res = bm.calc_v0(22, 2) # Returns 1.6
 ```
 ### Parameters
 ```

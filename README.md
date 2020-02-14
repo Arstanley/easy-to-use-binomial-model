@@ -15,7 +15,7 @@ res = bm.calc_v0(22, 2)
 ```
 binomial_model(s_0, u, d, r)
 ```
-**s_0**: Stock price at time ![equation](http://latex.codecogs.com/gif.latex?t_0%5Ctext%20%7B%20Onset%20event%20at%20time%20bin%20%7D%20t)  (Current price of stock). 
+**s_0**: Stock price at time ![equation](http://latex.codecogs.com/gif.latex?t_0)  (Current price of stock). 
 <br />
 **u**: Up factor <br />
 **d**: Down factor <br />

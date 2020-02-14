@@ -15,7 +15,7 @@ res = bm.calc_v0(22, 2)
 ```
 binomial_model(s_0, u, d, r)
 ```
-**s_0**: Stock price at time t0. (Current price of stock)
+**s_0**: Stock price at time t0 (Current price of stock). <br />
 **u**: Up factor
 **d**: Down factor
 **r**: Riskless interest rate

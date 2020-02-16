@@ -1,14 +1,14 @@
-# def traverse(root):
-#     current_level = [root]
-#     while current_level:
-#         print(' '.join(str(node) for node in current_level))
-#         next_level = list()
-#         for n in current_level:
-#             if n.h:
-#                 next_level.append(n.h)
-#             if n.t:
-#                 next_level.append(n.t)
-#         current_level = next_level
+def traverse(root):
+    current_level = [root]
+    while current_level:
+        print(' '.join(str(node) for node in current_level))
+        next_level = list()
+        for n in current_level:
+            if n.h:
+                next_level.append(n.h)
+            if n.t:
+                next_level.append(n.t)
+        current_level = next_level
 
 class Node:
 
@@ -54,7 +54,7 @@ class binomial_model:
 		return cur
 
 	
-	def calc_v0(self, k, T):
+	def calc_v0(self, k, T, model="ECO"):
 		"""
 		input:
 			k: Strike price
@@ -65,26 +65,32 @@ class binomial_model:
 		T += 1
 
 		self.root = self.build_binary_tree(self.root, T)		
-
+	
 		# Recursively calculate the option price
 		
-		ret = self.get_v0(self.root, k)
+		ret = self.get_v0(self.root, k, model)
 
 		return ret 
 
-	def get_v0(self, cur, k):
+	def get_v0(self, cur, k, model="ECO"):
 		"""
 		Input: 
 			cur: current node 
 		"""
 		if not cur.h and not cur.t:
-			if cur.val >= k:
-				return cur.val-k
-			else:
-				return 0	
+			if model=="ECO":
+				if cur.val >= k:
+					return cur.val-k
+				else:
+					return 0
+			if model=="EPO":
+				if cur.val <= k:
+					return k - cur.val
+				else:
+					return 0 	
 		
-		v_1 = self.get_v0(cur.h, k)
-		v_2 = self.get_v0(cur.t, k)
+		v_1 = self.get_v0(cur.h, k, model)
+		v_2 = self.get_v0(cur.t, k, model)
 
 		return (1 / (1+self.r)) * (self.p_til * v_1 + self.q_til * v_2)
 

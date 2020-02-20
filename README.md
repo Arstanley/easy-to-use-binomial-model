@@ -15,7 +15,7 @@ res = bm.calc_v0(22, 2， model="ECO") # Returns 1.6
 ```
 binomial_model(s_0, u, d, r)
 ```
-**s_0**: Stock price at time ![equation](http://latex.codecogs.com/gif.latex?t_0)  (Current price of stock). 
+**s_0**: Stock price at time ![equation](http://latex.codecogs.com/gif.latex?t_0)  (Current price of stock)
 <br />
 **u**: Up factor <br />
 **d**: Down factor <br />
